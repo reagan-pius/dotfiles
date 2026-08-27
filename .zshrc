@@ -28,6 +28,7 @@ alias c="clear"
 alias lg="lazygit" 
 alias sz="source ~/.zshrc"
 alias csh="~/dotfiles/config.sh"
+alias cap="~/dotfiles/capture-dotfiles.sh"
 
 # -------
 # pnpm Aliases
