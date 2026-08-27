@@ -113,3 +113,48 @@ alias la='eza --git --group-directories-first --icons -a'
 # ----------------------
 alias sl='stripe login'
 alias slf='stripe listen --forward-to'
+
+# ----------------------
+# Flush DNS
+# ----------------------
+alias flushdns="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder && echo 'DNS cache flushed'"
+
+# ----------------------
+# Node Version Manager (nvm)
+# ----------------------
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+export PATH="$HOME/.nvm/versions/node/v25.6.1/bin:$PATH"
+
+# ----------------------
+# Terraform completions
+# ----------------------
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+# ----------------------
+# Docker CLI completions
+# ----------------------
+fpath=(/Users/rgnpx/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+
+# ----------------------
+# PATH additions
+# ----------------------
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# ----------------------
+# Local secrets (gitignored; see ~/.zsecrets)
+# ----------------------
+[[ -f "$HOME/.zsecrets" ]] && source "$HOME/.zsecrets"
+
+# ----------------------
+# Project helpers
+# ----------------------
+# List Ashinaga pending invite signup links
+invite-ash() {
+  docker exec ashinaga-postgres-1 psql -U postgres -d postgres -tA -c "select email || ' -> http://localhost:' || case when user_type='staff' then '4001' else '4002' end || '/signup?token=' || token from invitations where status='pending'"
+}
