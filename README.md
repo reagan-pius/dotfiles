@@ -1,8 +1,9 @@
 # dotfiles
 
-Personal macOS setup, managed with a git repo as the **source of truth** for your shell and editor configs.
+Personal macOS setup, managed with a git repo as the **source of truth** for shell and editor configs.
 
-> **Note:** this repo is meant to be **private**. It contains personal setup details (paths, aliases, project helpers, email). See [Security](#-security--secrets) below.
+<!-- > **Note:** this repo is meant to be **private**. It contains personal setup details (paths, aliases, project helpers, email). See [Security](#-security--secrets) below.
+-->
 
 ## What's inside
 
@@ -63,7 +64,7 @@ git -C ~/dotfiles push
 csh                      # apply repo -> ~
 ```
 
-## 🔐 Security & secrets
+<!--## 🔐 Security & secrets
 
 Your `~/.zshrc` historically contained **live API keys**. They have been moved out of tracked files so the repo stays clean.
 
@@ -76,7 +77,7 @@ Your `~/.zshrc` historically contained **live API keys**. They have been moved o
 - **Never** put real credentials in `.zshrc` or any tracked file; add new secrets to `~/.zsecrets` instead. Also keep `~/.config/gh/hosts.yml` (GitHub auth) out of the repo.
 
 > Keep this repository **private**. If you accidentally commit a secret — even for a moment — it's potentially public forever; **rotate it**.
-
+-->
 ## Raycast
 
 `reload-dotfiles.sh` is a Raycast script ("Reload dotfiles") that runs `config.sh` with one click. Edit it in Raycast → Extensions to tweak.
