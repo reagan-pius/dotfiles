@@ -47,6 +47,10 @@ brew bundle            # install formulas, casks & VS Code extensions
 exec zsh               # or open a new terminal
 ```
 
+Run `./config.sh` to deploy configs; keys & personal credentials are **not** part of the
+repo by design. See [SECRETS-SETUP.md](SECRETS-SETUP.md) for how to restore them on a
+new machine.
+
 Requires: **Homebrew**, **Oh-My-Zsh**, and the tools referenced in your aliases (node/pnpm/bun, docker, eza, lazygit, nvim, vercel, stripe, terraform, etc.).
 
 ## Daily workflow
