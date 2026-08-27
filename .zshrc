@@ -79,7 +79,7 @@ alias dcs='docker sandbox run --template ghcr.io/byga-net/custom-docker-sandbox:
 alias rc='rails c'
 alias rdm='rake db:migrate'
 alias rdb='rake db:rollback'
-alias bi='bundle install'
+alias bundlei='bundle install' # 'bi' is already used by bun install
 alias rrg='rake routes | grep'
 
 # ----------------------
@@ -92,7 +92,7 @@ alias vls='vercel ls'
 alias vpr='vercel pull --environment=production'
 alias vps='vercel pull --environment=preview'
 alias vpsh='vercel push --environment=preview'
-alias vpsh='vercel push --environment=production'
+alias vprh='vercel push --environment=production'
 
 # ----------------------
 # Neovim Aliases
