@@ -1,3 +1,7 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/rgnpx/.docker/bin"
+# End of Docker Desktop section.
+
 source ~/.nvm/nvm.sh
 nvm use stable
 shopt -s autocd

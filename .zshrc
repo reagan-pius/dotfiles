@@ -30,6 +30,10 @@ alias sz="source ~/.zshrc"
 alias csh="~/dotfiles/config.sh"
 alias cap="~/dotfiles/capture-dotfiles.sh"
 
+# ff - fast global file search (Spotlight, with filesystem fallback)
+# lives in ~/dotfiles/ff.zsh so it is shareable independently
+[[ -f "$HOME/dotfiles/ff.zsh" ]] && source "$HOME/dotfiles/ff.zsh"
+
 # -------
 # pnpm Aliases
 # -------
