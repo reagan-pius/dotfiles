@@ -8,7 +8,7 @@ DOTFILES_DIR="$HOME/dotfiles"
 # Dotfiles that live directly in the home directory
 # ----------
 echo "Syncing dotfiles from ${DOTFILES_DIR}..."
-HOME_DOTFILES=(.gitconfig .zshrc .zprofile .bash_profile .inputrc)
+HOME_DOTFILES=(.gitconfig .zshrc .zprofile .bash_profile .profile .inputrc)
 for dotfile in "${HOME_DOTFILES[@]}"; do
     if [[ -f "$DOTFILES_DIR/$dotfile" ]]; then
         cp "$DOTFILES_DIR/$dotfile" "$HOME/$dotfile"
@@ -30,6 +30,14 @@ CODE_USER_DIR="$HOME/Library/Application Support/Code/User"
 mkdir -p "$CODE_USER_DIR"
 cp "$DOTFILES_DIR/config/vscode/settings.json" "$CODE_USER_DIR/settings.json"
 echo "  ok: vscode -> ~/Library/Application Support/Code/User/settings.json"
+
+# Cursor uses the same settings layout under its own app support dir
+CURSOR_USER_DIR="$HOME/Library/Application Support/Cursor/User"
+if [[ -f "$DOTFILES_DIR/config/cursor/settings.json" ]]; then
+    mkdir -p "$CURSOR_USER_DIR"
+    cp "$DOTFILES_DIR/config/cursor/settings.json" "$CURSOR_USER_DIR/settings.json"
+    echo "  ok: cursor -> ~/Library/Application Support/Cursor/User/settings.json"
+fi
 
 # ----------
 # Fish config

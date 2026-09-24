@@ -1,89 +1,74 @@
 {
-	"window.commandCenter": 1,
-	"workbench.iconTheme": "glyph.legacy",
-	"git.autofetch": true,
-	"git.confirmSync": false,
-	"window.titleBarStyle": "custom",
-	"glassit.alpha": 0,
-	"workbench.colorCustomizations": {
-		"terminal.background": "#00000000"
-	},
-	"workbench.settings.applyToAllProfiles": ["workbench.colorCustomizations"],
-	"vscode_vibrancy.preferedDarkTheme": "Catppuccin Mocha",
-	"vscode_vibrancy.opacity": -1,
-	"editor.fontSize": 13,
-	"prettier.jsxSingleQuote": true,
-	"prettier.proseWrap": "always",
-	"prettier.singleAttributePerLine": true,
-	"prettier.singleQuote": true,
-	"prettier.trailingComma": "none",
-	"prettier.useTabs": true,
-	"editor.formatOnSave": true,
-	"files.associations": {
-		".env*": "dotenv",
-		"cglicenses.json": "jsonc",
-		"*.tst": "typescript",
-		"*.inc": "cpp",
-		"typeindex": "cpp",
-		"typeinfo": "cpp",
-		"functional": "cpp",
-		"array": "cpp",
-		"*.tcc": "cpp",
-		"memory": "cpp",
-		"future": "cpp",
-		"istream": "cpp",
-		"tuple": "cpp",
-		"utility": "cpp",
-		"variant": "cpp",
-		"compare": "cpp",
-		"thread": "cpp",
-		"string": "cpp",
-		"string_view": "cpp",
-		"span": "cpp",
-		"vector": "cpp",
-		"charconv": "cpp",
-		"chrono": "cpp",
-		"optional": "cpp",
-		"format": "cpp",
-		"ratio": "cpp",
-		"system_error": "cpp",
-		"regex": "cpp",
-		"type_traits": "cpp"
-	},
-	"editor.tokenColorCustomizations": {
-		"textMateRules": []
-	},
-	"[typescriptreact]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"dotenv.enableAutocloaking": false,
-	"go.toolsManagement.autoUpdate": true,
-	"javascript.preferences.quoteStyle": "single",
-	"typescript.preferences.quoteStyle": "single",
-	"html.completion.attributeDefaultValue": "singlequotes",
-	"[go]": {
-		"editor.insertSpaces": false,
-		"editor.formatOnSave": true,
-		"editor.codeActionsOnSave": {
-			"source.organizeImports": "explicit"
-		}
-	},
-	"javascript.updateImportsOnFileMove.enabled": "always",
-	"workbench.colorTheme": "poimandres",
+	"vscode-pets.theme": "castle",
+	"vscode-pets.petSize": "medium",
 	"explorer.confirmDelete": false,
-	"workbench.sideBar.location": "right",
-	"editor.largeFileOptimizations": false,
-	"editor.unicodeHighlight.invisibleCharacters": false,
-	"breadcrumbs.enabled": false,
-	"cursor.cpp.enablePartialAccepts": true,
-	"files.autoSave": "onFocusChange",
-	"makefile.configureOnOpen": true,
-	"typescript.updateImportsOnFileMove.enabled": "always",
+	"jupyter.askForKernelRestart": false,
 	"explorer.confirmDragAndDrop": false,
-	"cursor.aipreview.enabled": true,
-	"cursor.general.enableShadowWorkspace": true
+	"code-runner.clearPreviousOutput": true,
+	"code-runner.saveAllFilesBeforeRun": true,
+	"code-runner.saveFileBeforeRun": true,
+	"notebook.output.scrolling": true,
+	"C_Cpp.default.compilerPath": "c:\\Users\\reaga\\Documents\\Class Stuff\\CS\\test.c",
+	"git.confirmSync": false,
+	"discord.detailsEditing": "Editing a file",
+	"editor.minimap.enabled": false,
+	"discord.removeRemoteRepository": true,
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.black-formatter",
+		"editor.formatOnSave": true
+	},
+	"codeium.enableConfig": {
+		"*": true,
+		"markdown": true
+	},
+	"liveServer.settings.donotShowInfoMsg": true,
+	"workbench.sideBar.location": "right",
+	"workbench.iconTheme": "material-icon-theme",
+	"github.copilot.nextEditSuggestions.enabled": false,
+	"go.toolsManagement.autoUpdate": true,
+	"python.defaultInterpreterPath": "/Users/rgnpx/PY/PY_env",
+	"files.autoSave": "afterDelay",
+	"json.schemaDownload.trustedDomains": {
+		"https://schemastore.azurewebsites.net/": true,
+		"https://raw.githubusercontent.com/": true,
+		"https://www.schemastore.org/": true,
+		"https://json.schemastore.org/": true,
+		"https://json-schema.org/": true,
+		"https://biomejs.dev": true
+	},
+	"workbench.browser.enableChatTools": true,
+
+	//Only activate a venv if one already exists
+	"python.terminal.activateEnvironment": false,
+	"python.terminal.activateEnvInCurrentTerminal": false,
+	"python.deafultInterpreterPath": "python3",
+
+	// Do NOT auto-create environments unless explicitly requested
+	"python.createEnvironment.trigger": "off",
+	"python.createEnvironment.autoCreate": false,
+
+	// Only activate environments when opening a Python file
+	"python.terminal.activateEnvInCurrentTerminalWhenPythonFileIsOpened": true,
+
+	// Prevent Copilot agents from defaulting to Python
+	"copilot.workspaceAgent.runtime": "node",
+
+	"terminal.integrated.env.osx": {
+		"VIRTUAL_ENV": "",
+		"CONDA_DEFAULT_ENV": "",
+		"PYENV_VERSION": ""
+	},
+	"chat.mcp.gallery.enabled": true,
+
+	"github.copilot.enableChatCompletions": true,
+	"github.copilot.editor.suppressverboseCompletions": true,
+	"github.copilot.inlineSuggest.enable": true,
+	"chat.viewSessions.orientation": "stacked",
+	"terminal.integrated.commandsToSkipShell": [
+		"kilo-code.new.agentManagerOpen",
+		"kilo-code.new.agentManager.showTerminal",
+		"kilo-code.new.agentManager.runScript"
+	],
+	"terminal.intergrated.rendererType": "canvas",
+	"kilo-code.new.agentWorkStyle": "skipped", // latest: fixed random text rendering issues in the terminal
 }

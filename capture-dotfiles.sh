@@ -19,7 +19,7 @@ echo "Capturing current machine state into ${DOTFILES_DIR}..."
 # ----------
 # Home-directory dotfiles
 # ----------
-for dotfile in .zshrc .zprofile .bash_profile .inputrc .gitconfig .gitignore; do
+for dotfile in .zshrc .zprofile .bash_profile .profile .inputrc .gitconfig .gitignore; do
     src="$HOME/$dotfile"
     if [[ -f "$src" ]]; then
         cp "$src" "$DOTFILES_DIR/$dotfile"
@@ -49,6 +49,30 @@ if [[ -f "$HOME/.config/ghostty/config" ]]; then
     echo "  captured: ghostty"
 else
     echo "  skip: ghostty (no ~/.config/ghostty/config)"
+fi
+
+# ----------
+# VS Code user settings (macOS stores these under Application Support)
+# ----------
+CODE_USER_DIR="$HOME/Library/Application Support/Code/User"
+if [[ -f "$CODE_USER_DIR/settings.json" ]]; then
+    mkdir -p "$DOTFILES_DIR/config/vscode"
+    cp "$CODE_USER_DIR/settings.json" "$DOTFILES_DIR/config/vscode/settings.json"
+    echo "  captured: vscode settings"
+else
+    echo "  skip: vscode (no ~/Library/Application Support/Code/User/settings.json)"
+fi
+
+# ----------
+# Cursor user settings (same layout as VS Code, different app dir)
+# ----------
+CURSOR_USER_DIR="$HOME/Library/Application Support/Cursor/User"
+if [[ -f "$CURSOR_USER_DIR/settings.json" ]]; then
+    mkdir -p "$DOTFILES_DIR/config/cursor"
+    cp "$CURSOR_USER_DIR/settings.json" "$DOTFILES_DIR/config/cursor/settings.json"
+    echo "  captured: cursor settings"
+else
+    echo "  skip: cursor (no ~/Library/Application Support/Cursor/User/settings.json)"
 fi
 
 echo

@@ -1,9 +1,12 @@
 tap "hashicorp/tap"
+tap "manaflow-ai/cmux"
 tap "schpet/tap"
 # Toolchain of the web
 brew "biome"
 # Multi-platform, multi-architecture disassembly framework
 brew "capstone"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
+brew "cloudflared"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Get a file from an HTTP, HTTPS or FTP server
@@ -14,6 +17,8 @@ brew "emacs"
 brew "eza"
 # GitHub command-line tool
 brew "gh"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
 # Simple tool to make locally trusted development certificates
 brew "mkcert"
 # Port scanning utility for large networks
@@ -24,24 +29,37 @@ brew "node"
 brew "nss"
 # Fast, disk space efficient package manager
 brew "pnpm"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Object-relational database system
 brew "postgresql@18", restart_service: :changed, link: true
 # Python library for creating static, animated, and interactive visualizations
 brew "python-matplotlib"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
+# Tools for and transforming and inspecting PDF files
+brew "qpdf"
 # Color-based alternative to figlet (uses libcaca)
 brew "toilet"
+# Markup-based typesetting system
+brew "typst"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Generate your Xcode project from a spec file and your folder structure
+brew "xcodegen"
 # CLI tool for linear.app that uses git branch names and directory names to open issues and team pages
 brew "schpet/tap/linear", trusted: true
+# Ghostty-based terminal with vertical tabs and notifications for AI coding agents
+cask "cmux"
+cask "font-latin-modern"
 # Open-source keystroke visualiser
 cask "keycastr"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # File system integration
 cask "macfuse"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
 # System monitor for the menu bar
 cask "stats"
 vscode "adpyke.codesnap"
@@ -89,6 +107,7 @@ go "golang.org/x/tools/gopls"
 go "honnef.co/go/tools/cmd/staticcheck"
 npm "@anthropic-ai/claude-code"
 npm "@google/gemini-cli"
+npm "@kapso/cli"
 npm "@openai/codex"
 npm "cline"
 npm "kanban"

@@ -1,0 +1,7 @@
+{
+    "window.commandCenter": true,
+    "files.autoSave": "afterDelay",
+    "explorer.confirmDelete": false,
+    "window.autoDetectColorScheme": true,
+    "cursor.composer.queueMessageDefaultBehavior": "steer"
+}
