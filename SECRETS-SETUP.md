@@ -88,6 +88,8 @@ and `unsecret` also remind you to **revoke** the old credential at the provider 
 - Keep `~/.config/gh/hosts.yml` (GitHub auth) out of the repo too.
 - `config/vscode/mcp.json` **is** tracked and this repo is **public**: keep MCP servers
   pointed at URLs or `npx` commands and read tokens from the environment
-  (`"${env:MY_TOKEN}"`) — never paste a key into it.
+  (`"${env:MY_TOKEN}"`). `capture-dotfiles.sh --check` (or `--commit`) enforces this — a
+  non-empty literal under `env`/`headers`, or anything that looks like a raw token,
+  aborts the run before anything is committed.
 - Cursor's `~/.cursor/cli-config.json` holds auth state (`authInfo`) and is deliberately
   **not** tracked, same as `hosts.yml`.

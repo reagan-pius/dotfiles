@@ -23,7 +23,7 @@ Personal macOS setup, managed with a git repo as the **source of truth** for she
 | `config/cursor/settings.json` | Cursor user settings |
 | `config/fish/…` | Fish shell `conf.d` + `completions` |
 | `config.sh` | Apply: sync repo **→** home (`~` and `~/.config`) |
-| `capture-dotfiles.sh` | Capture: sync home **→** repo |
+| `capture-dotfiles.sh` | Capture: sync home **→** repo; `--check` runs the secret gates, `--commit` gates + commits |
 | `reload-dotfiles.sh` | Raycast entry that runs `config.sh` |
 
 ## The two directions
@@ -39,6 +39,24 @@ Convenience aliases (defined in `.zshrc`):
 csh   # apply :  repo -> machine        (~/dotfiles/config.sh)
 cap   # capture : machine -> repo       (~/dotfiles/capture-dotfiles.sh)
 ```
+
+### Secret gates (run before every commit)
+
+`capture-dotfiles.sh` refuses to continue when any of these is true, because the repo is
+public:
+
+| Gate | Catches |
+|------|---------|
+| 1. credential shapes | `lin_api_…`, `sk-…`, `ghp_/gho_/ghu_/ghs_/ghr_…`, `github_pat_…`, `AKIA…`, `xox…-…`, `AIza…`, JWT (`eyJ….…`) anywhere in the repo |
+| 2. MCP placeholders | a **literal** under `env`/`headers` in `config/vscode/mcp.json` instead of `"${env:NAME}"` / `"${input:NAME}"` |
+| 3. raw-token shapes | a long hex/base64 token under **any** key (even an innocent one like `FOO`), inline `Bearer <token>`, or `?token=`/`?api_key=` in a URL |
+
+```sh
+sh ~/dotfiles/capture-dotfiles.sh --check    # run the gates only (no staging, no commit)
+sh ~/dotfiles/capture-dotfiles.sh --commit   # capture -> gates -> commit
+```
+
+The gates also run as part of `cap --commit`, so the alias takes the flag too.
 
 ## Setup on a new machine
 
