@@ -59,6 +59,12 @@ if [[ -f "$CODE_USER_DIR/settings.json" ]]; then
     mkdir -p "$DOTFILES_DIR/config/vscode"
     cp "$CODE_USER_DIR/settings.json" "$DOTFILES_DIR/config/vscode/settings.json"
     echo "  captured: vscode settings"
+    if [[ -f "$CODE_USER_DIR/mcp.json" ]]; then
+        cp "$CODE_USER_DIR/mcp.json" "$DOTFILES_DIR/config/vscode/mcp.json"
+        echo "  captured: vscode mcp.json"
+    else
+        echo "  skip: vscode mcp.json (not present)"
+    fi
 else
     echo "  skip: vscode (no ~/Library/Application Support/Code/User/settings.json)"
 fi

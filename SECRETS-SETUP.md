@@ -32,6 +32,24 @@ vars are simply unset):
 [[ -f "$HOME/.zsecrets" ]] && source "$HOME/.zsecrets"
 ```
 
+## Managing secrets with the `secret` helpers
+
+`.zshrc` (tracked, so the helpers travel with the repo) defines three functions that own
+`~/.zsecrets` for you. They write atomically, `chmod 600` the file, verify the line landed
+exactly once, and scrub the value from `~/.zsh_history` (on disk **and** in the live
+session) so a key never lingers in plaintext:
+
+```sh
+secret NAME 'value'   # set: persist to ~/.zsecrets + export in this session
+secret NAME           # check: persisted? exported right now?
+secret -l             # list persisted names (values are never printed)
+rotate NAME 'new'     # set new value + scrub the old one from history
+unsecret NAME         # remove + unset + scrub   (-y to skip the prompt)
+```
+
+They only ever reference the *path* `~/.zsecrets` — no values live in the repo. `rotate`
+and `unsecret` also remind you to **revoke** the old credential at the provider dashboard.
+
 ## Restoring on a new machine (3 steps)
 
 1. **Deploy the repo** (see README → "Setup on a new machine"):
@@ -68,3 +86,8 @@ vars are simply unset):
   **rotate it** at the provider even if it wasn't committed — rotation is the only
   way to evict an exposed credential.
 - Keep `~/.config/gh/hosts.yml` (GitHub auth) out of the repo too.
+- `config/vscode/mcp.json` **is** tracked and this repo is **public**: keep MCP servers
+  pointed at URLs or `npx` commands and read tokens from the environment
+  (`"${env:MY_TOKEN}"`) — never paste a key into it.
+- Cursor's `~/.cursor/cli-config.json` holds auth state (`authInfo`) and is deliberately
+  **not** tracked, same as `hosts.yml`.

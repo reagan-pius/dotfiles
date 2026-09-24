@@ -31,6 +31,11 @@ mkdir -p "$CODE_USER_DIR"
 cp "$DOTFILES_DIR/config/vscode/settings.json" "$CODE_USER_DIR/settings.json"
 echo "  ok: vscode -> ~/Library/Application Support/Code/User/settings.json"
 
+if [[ -f "$DOTFILES_DIR/config/vscode/mcp.json" ]]; then
+    cp "$DOTFILES_DIR/config/vscode/mcp.json" "$CODE_USER_DIR/mcp.json"
+    echo "  ok: vscode mcp.json -> ~/Library/Application Support/Code/User/mcp.json"
+fi
+
 # Cursor uses the same settings layout under its own app support dir
 CURSOR_USER_DIR="$HOME/Library/Application Support/Cursor/User"
 if [[ -f "$DOTFILES_DIR/config/cursor/settings.json" ]]; then

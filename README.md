@@ -9,15 +9,18 @@ Personal macOS setup, managed with a git repo as the **source of truth** for she
 
 | Path | Purpose |
 |------|---------|
-| `.zshrc` | Zsh config: Oh-My-Zsh + Pure prompt, ~80 aliases, nvm, Docker/Terraform completions, PATHs, project helper (`invite-ash`) |
+| `.zshrc` | Zsh config: Oh-My-Zsh + Pure prompt, ~80 aliases, nvm, Docker/Terraform completions, PATHs, sources `~/dotfiles/ff.zsh`, project helper (`invite-ash`), and the `secret` / `rotate` / `unsecret` helpers for `~/.zsecrets` |
 | `.zprofile` | Login-shell setup: Homebrew shellenv, Antigravity path |
+| `.profile` | POSIX login shells (sh/bash): Docker Desktop + Antigravity `PATH`, sources `~/.local/bin/env` |
 | `.bash_profile` | Bash config: nvm, prompt, aliases |
 | `.gitconfig` | Git identity `reagan-pius`, `main` default branch, color + eza aliases |
 | `.inputrc` | readline: ignore-case completion, menu-complete |
 | `.gitignore` | Global ignore: `node_modules/`, `.DS_Store`, **secrets** (`.zsecrets`) |
 | `Brewfile` | Homebrew bundle manifest (formulas, casks, VS Code extensions) — `brew bundle dump` output |
 | `config/ghostty/config` | Ghostty terminal settings |
-| `config/vscode/settings.json` | VS Code user settings |
+| `config/vscode/settings.json` | VS Code user settings (default profile) |
+| `config/vscode/mcp.json` | VS Code MCP servers — URLs/commands only, **never tokens** |
+| `config/cursor/settings.json` | Cursor user settings |
 | `config/fish/…` | Fish shell `conf.d` + `completions` |
 | `config.sh` | Apply: sync repo **→** home (`~` and `~/.config`) |
 | `capture-dotfiles.sh` | Capture: sync home **→** repo |
